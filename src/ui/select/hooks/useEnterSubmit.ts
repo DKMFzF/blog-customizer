@@ -5,6 +5,10 @@ type UseEnterSubmit = {
 	placeholderRef: React.RefObject<HTMLDivElement>;
 };
 
+/**
+ * хук для отправки данных через нажатие на Enter
+ */
+
 export const useEnterSubmit = ({
 	placeholderRef,
 	onChange,
@@ -14,9 +18,7 @@ export const useEnterSubmit = ({
 		if (!placeholderEl) return;
 
 		const handleEnterKeyDown = (event: KeyboardEvent) => {
-			if (event.key === 'Enter') {
-				onChange((isOpen: boolean) => !isOpen);
-			}
+			if (event.key === 'Enter') onChange((isOpen: boolean) => !isOpen);
 		};
 		placeholderEl.addEventListener('keydown', handleEnterKeyDown);
 

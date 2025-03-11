@@ -1,13 +1,21 @@
+// все классы шрифтов в преокте. Массив используется конструкцию as const
+// это означает что массив будет не изменяемым
 export const fontFamilyClasses = [
 	'open-sans',
 	'ubuntu',
 	'cormorant-garamond',
 	'days-one',
 	'merriweather',
-] as const;
+] as const; // делаем тиреальный массив
+// это означает что на выходе массив будет выглядить как
+// readonly ["open-sans", "ubuntu", "cormorant-garamond", "days-one", "merriweather"]
 
+// формируется тип на основе неизменного массива fontFamilyClasses
+// берётся его тип readonly [....] и добавлвется [number]
+// в данном случае [number] это индексный доступ
 export type FontFamiliesClasses = (typeof fontFamilyClasses)[number];
 
+// типы для опции в дропдауне
 export type OptionType = {
 	title: string;
 	value: string;

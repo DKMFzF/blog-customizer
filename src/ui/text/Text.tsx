@@ -27,6 +27,10 @@ type TextProps = {
 	dynamicLite?: boolean;
 };
 
+/**
+ * компонент текста
+ */
+
 export const Text = ({
 	children,
 	as: Tag = 'div',

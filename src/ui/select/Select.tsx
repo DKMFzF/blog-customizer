@@ -20,13 +20,20 @@ type SelectProps = {
 	title?: string;
 };
 
-export const Select = (props: SelectProps) => {
+/**
+ * Компонент представляет из себя дропдаун
+ * @param props
+ * @returns
+ */
+
+export const Select = (props: SelectProps): React.JSX.Element => {
 	const { options, placeholder, selected, onChange, onClose, title } = props;
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const rootRef = useRef<HTMLDivElement>(null);
 	const placeholderRef = useRef<HTMLDivElement>(null);
 	const optionClassName = selected?.optionClassName ?? '';
 
+	// вешаем на компонент обработчик клика на закрытие элементы
 	useOutsideClickClose({
 		isOpen,
 		rootRef,
@@ -34,18 +41,21 @@ export const Select = (props: SelectProps) => {
 		onChange: setIsOpen,
 	});
 
+	// вешаем обработчик на отправку через Enter
 	useEnterSubmit({
 		placeholderRef,
 		onChange: setIsOpen,
 	});
 
+	// срабатывает когда кликаем на опцию
 	const handleOptionClick = (option: OptionType) => {
 		setIsOpen(false);
 		onChange?.(option);
 	};
-	const handlePlaceHolderClick: MouseEventHandler<HTMLDivElement> = () => {
+
+	// срабатывает когда кликаем на уже выбранную опцию
+	const handlePlaceHolderClick: MouseEventHandler<HTMLDivElement> = () =>
 		setIsOpen((isOpen) => !isOpen);
-	};
 
 	return (
 		<div className={styles.container}>

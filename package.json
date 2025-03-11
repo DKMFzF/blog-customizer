@@ -68,10 +68,10 @@
 		"format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path ./.prettierignore",
 		"test": "npm run stylelint:fix && npm run lint && npm run format",
 		"prepare": "husky install",
-		"commit": "git add -A && npm run test && cz && npx standard-version",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"github:push": "git push origin main"
+		"commit": "git add -A && npm run test && cz && npx standard-version",
+		"gitpush": "git push origin main"
 	},
 	"eslintConfig": {
 		"extends": [
