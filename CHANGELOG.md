@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/DKMFzF/blog-customizer/compare/v1.1.0...v1.2.0) (2025-03-11)
+
+### Features
+
+- **article paramsform:** add translate 0 aside component ([4b78001](https://github.com/DKMFzF/blog-customizer/commit/4b780015cbef1421b266146ca019a243875841a5)), closes [#1](https://github.com/DKMFzF/blog-customizer/issues/1)
+
 ## [1.1.0](https://github.com/DKMFzF/blog-customizer/compare/v1.0.3...v1.1.0) (2025-03-11)
 
 ### Features
