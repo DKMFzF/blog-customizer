@@ -8,6 +8,10 @@ type SelectOptionProps = {
 	onChange?: (selected: OptionType) => void;
 };
 
+/**
+ * компонент для упращения пользования select
+ */
+
 export const SelectOption = (props: SelectOptionProps) => {
 	const { title, options, onChange } = props;
 	const [selected, setSelected] = useState<OptionType>(options[0]);
