@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/DKMFzF/blog-customizer/compare/v1.4.0...v1.5.0) (2025-03-12)
+
+### Features
+
+- **articleparamsform:** add separator in component ([027b3e7](https://github.com/DKMFzF/blog-customizer/commit/027b3e74efb4842e29059901fdcf323da16bb887))
+
 ## [1.4.0](https://github.com/DKMFzF/blog-customizer/compare/v1.3.3...v1.4.0) (2025-03-12)
 
 ### Features
