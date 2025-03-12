@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/DKMFzF/blog-customizer/compare/v1.3.1...v1.3.2) (2025-03-12)
+
+### Bug Fixes
+
+- **article params form:** fix bug select option ([e085f97](https://github.com/DKMFzF/blog-customizer/commit/e085f97379b5d889d66a678a939a5b15f6716193))
+
 ### [1.3.1](https://github.com/DKMFzF/blog-customizer/compare/v1.3.0...v1.3.1) (2025-03-11)
 
 ## [1.3.0](https://github.com/DKMFzF/blog-customizer/compare/v1.2.0...v1.3.0) (2025-03-11)
