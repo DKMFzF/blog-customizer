@@ -16,6 +16,7 @@ import {
 } from 'src/constants/articleProps';
 import { Select } from 'src/ui/select';
 import { RadioGroup } from 'src/ui/radio-group';
+import { Separator } from 'src/ui/separator';
 
 /**
  * Боковая панель формы открытия настроек страницы
@@ -61,7 +62,7 @@ export const ArticleParamsForm = () => {
 						title='Цвет шрифта'
 					/>
 
-					{/* TODO: добавить разделитель */}
+					<Separator />
 
 					<Select
 						selected={articleState.backgroundColor}
