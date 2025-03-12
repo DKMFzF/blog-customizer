@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/DKMFzF/blog-customizer/compare/v1.5.0...v1.6.0) (2025-03-12)
+
+### Features
+
+- **articleparamsform:** add detect change ([2ded578](https://github.com/DKMFzF/blog-customizer/commit/2ded578080ddb4b999f905006e7e37b00d9a23c7))
+
 ## [1.5.0](https://github.com/DKMFzF/blog-customizer/compare/v1.4.0...v1.5.0) (2025-03-12)
 
 ### Features
