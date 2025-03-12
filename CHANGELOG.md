@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/DKMFzF/blog-customizer/compare/v1.6.0...v1.7.0) (2025-03-12)
+
+### Features
+
+- **new branch:** asd ([ce25239](https://github.com/DKMFzF/blog-customizer/commit/ce252391e10c88fc977cc7f8d0b6c1e6fce8b82f))
+
 ## [1.6.0](https://github.com/DKMFzF/blog-customizer/compare/v1.5.0...v1.6.0) (2025-03-12)
 
 ### Features
