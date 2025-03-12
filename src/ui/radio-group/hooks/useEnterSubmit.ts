@@ -6,6 +6,10 @@ type UseEnterSubmit = {
 	option: OptionType;
 };
 
+/**
+ * хук для того что бы отправить жанные с кнопки по нажатию enter
+ */
+
 export const useEnterSubmit = ({ onChange, option }: UseEnterSubmit) => {
 	const optionRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +26,6 @@ export const useEnterSubmit = ({ onChange, option }: UseEnterSubmit) => {
 
 		optionHtml.addEventListener('keydown', handleEnterKeyDown);
 
-		// не забываем удалять листенеры, при размонтировании компонента
 		return () => {
 			optionHtml.removeEventListener('keydown', handleEnterKeyDown);
 		};

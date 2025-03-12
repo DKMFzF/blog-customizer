@@ -12,6 +12,10 @@ type RadioGroupProps = {
 	title: string;
 };
 
+/**
+ * комопнент вмещающий группу кнопок
+ */
+
 export const RadioGroup = (props: RadioGroupProps) => {
 	const { name, options, selected, onChange, title } = props;
 

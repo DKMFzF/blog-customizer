@@ -14,6 +14,10 @@ type OptionProps = {
 	option: OptionType;
 };
 
+/**
+ * компонент опции радио кнопки
+ */
+
 export const Option = (props: OptionProps) => {
 	const { value, title, selected, groupName, onChange, option } = props;
 
