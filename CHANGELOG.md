@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/DKMFzF/blog-customizer/compare/v1.3.3...v1.4.0) (2025-03-12)
+
+### Features
+
+- **articleparamsform:** add RadioGroup in component ([3990edb](https://github.com/DKMFzF/blog-customizer/commit/3990edb355174845eb568ef4c190c33b1eab579b))
+
 ### [1.3.3](https://github.com/DKMFzF/blog-customizer/compare/v1.3.2...v1.3.3) (2025-03-12)
 
 ### [1.3.2](https://github.com/DKMFzF/blog-customizer/compare/v1.3.1...v1.3.2) (2025-03-12)
