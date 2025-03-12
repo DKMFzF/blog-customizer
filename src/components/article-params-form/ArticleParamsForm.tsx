@@ -9,12 +9,13 @@ import {
 	fontColors,
 	backgroundColors,
 	contentWidthArr,
-	// fontSizeOptions,
+	fontSizeOptions,
 	defaultArticleState,
 	ArticleStateType,
 	OptionType,
 } from 'src/constants/articleProps';
 import { Select } from 'src/ui/select';
+import { RadioGroup } from 'src/ui/radio-group';
 
 /**
  * Боковая панель формы открытия настроек страницы
@@ -23,7 +24,6 @@ export const ArticleParamsForm = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [articleState, setArticleState] =
 		useState<ArticleStateType>(defaultArticleState);
-
 	const handleOpenBtnClick = () => setIsOpen((isOpen) => !isOpen);
 
 	const handleChange = (key: keyof ArticleStateType, value: OptionType) =>
@@ -46,12 +46,22 @@ export const ArticleParamsForm = () => {
 						title='Шрифт'
 					/>
 
+					<RadioGroup
+						selected={articleState.fontSizeOption}
+						title='размер шрифта'
+						name='radio'
+						options={fontSizeOptions}
+						onChange={(value) => handleChange('fontSizeOption', value)}
+					/>
+
 					<Select
 						selected={articleState.fontColor}
 						onChange={(value) => handleChange('fontColor', value)}
 						options={fontColors}
 						title='Цвет шрифта'
 					/>
+
+					{/* TODO: добавить разделитель */}
 
 					<Select
 						selected={articleState.backgroundColor}
