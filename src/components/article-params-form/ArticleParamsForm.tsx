@@ -23,6 +23,10 @@ type ArticleParamsFormProps = {
 	onReset: () => void;
 };
 
+/**
+ * компонент сайд бара
+ */
+
 export const ArticleParamsForm = ({
 	articleState,
 	onChange,
