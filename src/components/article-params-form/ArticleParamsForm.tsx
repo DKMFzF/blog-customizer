@@ -33,13 +33,13 @@ export const ArticleParamsForm = ({
 	onReset,
 }: ArticleParamsFormProps) => {
 	const [formState, setFormState] = useState<ArticleStateType>(articleState);
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
 	useEffect(() => {
 		setFormState(articleState);
 	}, [articleState]);
 
-	const handleOpenBtnClick = () => setIsOpen((isOpen) => !isOpen);
+	const handleOpenBtnClick = () => setIsMenuOpen((isMenuOpen) => !isMenuOpen);
 
 	const handleFormChange = (key: keyof ArticleStateType, value: OptionType) =>
 		setFormState((prev) => ({ ...prev, [key]: value }));
@@ -53,9 +53,9 @@ export const ArticleParamsForm = ({
 
 	return (
 		<>
-			<ArrowButton isOpen={isOpen} onClick={handleOpenBtnClick} />
+			<ArrowButton isOpen={isMenuOpen} onClick={handleOpenBtnClick} />
 			<aside
-				className={clsx(styles.container, isOpen && styles.container_open)}>
+				className={clsx(styles.container, isMenuOpen && styles.container_open)}>
 				<form className={clsx(styles.form)} onSubmit={handleApply}>
 					<Text as='h2' size={31} weight={800} uppercase dynamicLite>
 						Задайте параметры
