@@ -5,27 +5,13 @@ import { ArticleParamsForm } from './components/article-params-form/ArticleParam
 import {
 	defaultArticleState,
 	ArticleStateType,
-	OptionType,
 } from './constants/articleProps';
-
 import './styles/index.scss';
 import styles from './styles/index.module.scss';
-
-/**
- * компонент App корневой комопнент проекта
- */
 
 export const App = () => {
 	const [articleState, setArticleState] =
 		useState<ArticleStateType>(defaultArticleState);
-
-	const handleChange = (key: keyof ArticleStateType, value: OptionType) => {
-		setArticleState((prev) => ({ ...prev, [key]: value }));
-	};
-
-	const handleReset = () => {
-		setArticleState(defaultArticleState);
-	};
 
 	return (
 		<main
@@ -40,9 +26,8 @@ export const App = () => {
 				} as CSSProperties
 			}>
 			<ArticleParamsForm
-				articleState={articleState}
-				onChange={handleChange}
-				onReset={handleReset}
+				onChange={setArticleState}
+				onReset={() => setArticleState(defaultArticleState)}
 			/>
 			<Article />
 		</main>

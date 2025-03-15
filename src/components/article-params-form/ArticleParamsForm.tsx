@@ -3,7 +3,7 @@ import { Button } from 'src/ui/button';
 import { Text } from 'src/ui/text';
 import clsx from 'clsx';
 import styles from './ArticleParamsForm.module.scss';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import {
 	fontFamilyOptions,
 	fontColors,
@@ -19,8 +19,7 @@ import { Separator } from 'src/ui/separator';
 import { useOutsideClickCloseArticle } from './hooks/useOutsideClickCloseArticle';
 
 type ArticleParamsFormProps = {
-	articleState: ArticleStateType;
-	onChange: (key: keyof ArticleStateType, value: OptionType) => void;
+	onChange: (state: ArticleStateType) => void;
 	onReset: () => void;
 };
 
@@ -29,17 +28,18 @@ type ArticleParamsFormProps = {
  */
 
 export const ArticleParamsForm = ({
-	articleState,
 	onChange,
 	onReset,
 }: ArticleParamsFormProps): React.JSX.Element => {
-	const [formState, setFormState] = useState<ArticleStateType>(articleState);
+	const [formState, setFormState] = useState<ArticleStateType>({
+		fontFamilyOption: fontFamilyOptions[0],
+		fontSizeOption: fontSizeOptions[0],
+		fontColor: fontColors[0],
+		backgroundColor: backgroundColors[0],
+		contentWidth: contentWidthArr[0],
+	});
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 	const rootRef = useRef<HTMLElement>(null);
-
-	useEffect(() => {
-		setFormState(articleState);
-	}, [articleState]);
 
 	useOutsideClickCloseArticle({
 		isOpen: isMenuOpen,
@@ -54,9 +54,18 @@ export const ArticleParamsForm = ({
 
 	const handleApply = (e: React.FormEvent) => {
 		e.preventDefault();
-		(Object.keys(formState) as (keyof ArticleStateType)[]).forEach((key) =>
-			onChange(key, formState[key])
-		);
+		onChange(formState);
+	};
+
+	const handleReset = () => {
+		setFormState({
+			fontFamilyOption: fontFamilyOptions[0],
+			fontSizeOption: fontSizeOptions[0],
+			fontColor: fontColors[0],
+			backgroundColor: backgroundColors[0],
+			contentWidth: contentWidthArr[0],
+		});
+		onReset();
 	};
 
 	return (
@@ -65,7 +74,7 @@ export const ArticleParamsForm = ({
 			<aside
 				className={clsx(styles.container, isMenuOpen && styles.container_open)}
 				ref={rootRef}>
-				<form className={clsx(styles.form)} onSubmit={handleApply}>
+				<form className={styles.form} onSubmit={handleApply}>
 					<Text as='h2' size={31} weight={800} uppercase dynamicLite>
 						Задайте параметры
 					</Text>
@@ -108,12 +117,12 @@ export const ArticleParamsForm = ({
 						title='Ширина контента'
 					/>
 
-					<div className={clsx(styles.bottomContainer)}>
+					<div className={styles.bottomContainer}>
 						<Button
 							title='Сбросить'
 							htmlType='reset'
 							type='clear'
-							onClick={onReset}
+							onClick={handleReset}
 						/>
 						<Button title='Применить' htmlType='submit' type='apply' />
 					</div>
