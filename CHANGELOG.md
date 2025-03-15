@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/DKMFzF/blog-customizer/compare/v1.7.1...v1.8.0) (2025-03-15)
+
+### Features
+
+- **useoutsideclickclosearticle:** add hook close outside click ([abe1869](https://github.com/DKMFzF/blog-customizer/commit/abe1869bb448c4f789e89c74aac9cb01aae1b842))
+
 ### [1.7.1](https://github.com/DKMFzF/blog-customizer/compare/v1.7.0...v1.7.1) (2025-03-15)
 
 ## [1.7.0](https://github.com/DKMFzF/blog-customizer/compare/v1.6.0...v1.7.0) (2025-03-12)
