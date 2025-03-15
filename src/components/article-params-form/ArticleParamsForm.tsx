@@ -3,7 +3,7 @@ import { Button } from 'src/ui/button';
 import { Text } from 'src/ui/text';
 import clsx from 'clsx';
 import styles from './ArticleParamsForm.module.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
 	fontFamilyOptions,
 	fontColors,
@@ -16,6 +16,7 @@ import {
 import { Select } from 'src/ui/select';
 import { RadioGroup } from 'src/ui/radio-group';
 import { Separator } from 'src/ui/separator';
+import { useOutsideClickCloseArticle } from './hooks/useOutsideClickCloseArticle';
 
 type ArticleParamsFormProps = {
 	articleState: ArticleStateType;
@@ -31,13 +32,20 @@ export const ArticleParamsForm = ({
 	articleState,
 	onChange,
 	onReset,
-}: ArticleParamsFormProps) => {
+}: ArticleParamsFormProps): React.JSX.Element => {
 	const [formState, setFormState] = useState<ArticleStateType>(articleState);
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+	const rootRef = useRef<HTMLElement>(null);
 
 	useEffect(() => {
 		setFormState(articleState);
 	}, [articleState]);
+
+	useOutsideClickCloseArticle({
+		isOpen: isMenuOpen,
+		rootRef,
+		onClose: setIsMenuOpen,
+	});
 
 	const handleOpenBtnClick = () => setIsMenuOpen((isMenuOpen) => !isMenuOpen);
 
@@ -55,7 +63,8 @@ export const ArticleParamsForm = ({
 		<>
 			<ArrowButton isOpen={isMenuOpen} onClick={handleOpenBtnClick} />
 			<aside
-				className={clsx(styles.container, isMenuOpen && styles.container_open)}>
+				className={clsx(styles.container, isMenuOpen && styles.container_open)}
+				ref={rootRef}>
 				<form className={clsx(styles.form)} onSubmit={handleApply}>
 					<Text as='h2' size={31} weight={800} uppercase dynamicLite>
 						Задайте параметры
